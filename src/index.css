@@ -4,12 +4,7 @@
 
 :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-}
-
-.dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --foreground: 240 10% 3.9%;
 }
 
 html {
@@ -17,7 +12,7 @@ html {
 }
 
 body {
-    @apply bg-black text-white font-inter;
+    @apply bg-white text-zinc-900 font-inter;
 }
 
 h1,

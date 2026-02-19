@@ -46,15 +46,15 @@ const services = [
 
 const Services = () => {
     return (
-        <section id="services" className="py-20">
+        <section id="services" className="py-24 bg-white">
             <div className="container mx-auto px-4">
-                <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center font-outfit">Servicios Especializados</h2>
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <h2 className="text-4xl md:text-5xl font-black mb-16 text-left font-outfit text-zinc-900 tracking-tight">Servicios Especializados</h2>
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {services.map((service, index) => (
-                        <div key={index} className="bg-zinc-900/50 p-6 rounded-xl border border-white/5 hover:bg-zinc-800/50 transition-colors">
-                            <div className="mb-4">{service.icon}</div>
-                            <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                            <p className="text-gray-400 text-sm leading-relaxed">{service.description}</p>
+                        <div key={index} className="bg-zinc-50 p-10 rounded-3xl border border-zinc-100 hover:bg-white hover:shadow-xl hover:scale-[1.02] transition-all duration-300 group">
+                            <div className="mb-6 transform group-hover:scale-110 transition-transform duration-300">{service.icon}</div>
+                            <h3 className="text-2xl font-bold mb-3 text-zinc-900 leading-tight">{service.title}</h3>
+                            <p className="text-zinc-500 text-base leading-relaxed">{service.description}</p>
                         </div>
                     ))}
                 </div>

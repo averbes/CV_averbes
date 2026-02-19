@@ -26,15 +26,15 @@ const Principles = () => {
     ];
 
     return (
-        <section className="py-20 border-b border-white/5">
+        <section className="py-24 bg-white border-b border-zinc-100">
             <div className="container mx-auto px-4">
-                <h2 className="text-2xl font-bold mb-12 text-center font-outfit">Principios</h2>
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <h2 className="text-4xl md:text-5xl font-black mb-16 text-left font-outfit text-zinc-900 tracking-tight">Principios</h2>
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
                     {principles.map((item, index) => (
-                        <div key={index} className="p-6 bg-zinc-950 rounded-xl border border-white/10 hover:border-blue-500/30 transition-colors">
-                            <div className="mb-4 bg-zinc-900 w-12 h-12 flex items-center justify-center rounded-lg">{item.icon}</div>
-                            <h3 className="text-lg font-semibold mb-2">{item.title}</h3>
-                            <p className="text-gray-400 text-sm">{item.description}</p>
+                        <div key={index} className="p-10 bg-zinc-50 rounded-3xl border border-zinc-100 hover:bg-white hover:shadow-xl transition-all duration-300 group">
+                            <div className="mb-6 bg-white w-14 h-14 flex items-center justify-center rounded-2xl shadow-sm border border-zinc-100 group-hover:scale-110 transition-transform">{item.icon}</div>
+                            <h3 className="text-2xl font-bold mb-3 text-zinc-900 leading-tight">{item.title}</h3>
+                            <p className="text-zinc-500 text-base leading-relaxed">{item.description}</p>
                         </div>
                     ))}
                 </div>
