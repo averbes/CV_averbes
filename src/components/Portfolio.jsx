@@ -1,62 +1,139 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { ExternalLink, Rocket, Globe, Trophy, ShoppingBag } from 'lucide-react';
 
 const projects = [
     {
-        title: "Mundo Vacacional CK",
-        category: "Web App / Turismo",
-        image: "/mundo-vacacional.png",
-        link: "https://www.mundovacacionalck.com/"
+        title: "Torneo Veterano",
+        category: "Dashboard Deportivo",
+        image: "/torneoveteranos.JPG",
+        link: "https://torneo-veterano.onrender.com/",
+        tech: ["React", "Tailwind", "Firebase"],
+        icon: <Trophy className="w-5 h-5" />
     },
     {
-        title: "InteliaSalud",
-        category: "Web App / Salud",
-        image: "/inteliasalud.png",
-        link: "https://www.inteliasalud.com/"
+        title: "Torneo Alto Bosque",
+        category: "Gestión de Torneos",
+        image: "/torneo altobosque.JPG",
+        link: "https://torneo-alto-bosque.vercel.app/",
+        tech: ["Vite", "Node.js", "MongoDB"],
+        icon: <Globe className="w-5 h-5" />
     },
     {
-        title: "Prueba Firma",
-        category: "Web App / Utilidad",
-        image: "/prueba-firma.png",
-        link: "https://prueba-firma.netlify.app/"
+        title: "Hele Store",
+        category: "E-commerce Premium",
+        image: "/helestrore.JPG",
+        link: "https://hele-store.vercel.app/",
+        tech: ["Next.js", "Supabase", "Stripe"],
+        icon: <ShoppingBag className="w-5 h-5" />
     }
 ];
 
 const Portfolio = () => {
     return (
-        <section id="portfolio" className="py-24 bg-white">
-            <div className="container mx-auto px-4">
-                <h2 className="text-4xl md:text-5xl font-black mb-16 text-left font-outfit text-zinc-900 tracking-tight">Proyectos Destacados</h2>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <section id="portfolio" className="py-24 bg-[#030303] text-white relative overflow-hidden font-inter">
+            {/* Background elements */}
+            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-[150px] pointer-events-none" />
+
+            <div className="container mx-auto px-4 relative z-10">
+                <div className="max-w-4xl mb-20 text-left">
+                    <motion.span
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="text-blue-500 font-black tracking-[0.4em] text-[10px] md:text-xs uppercase"
+                    >
+                        PROYECTOS RECIENTES
+                    </motion.span>
+                    <motion.h2
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.1 }}
+                        className="text-4xl md:text-6xl font-black mt-4 font-outfit text-white tracking-tighter"
+                    >
+                        Portafolio de <br className="hidden md:block" />
+                        <span className="text-zinc-500">Soluciones Digitales</span>
+                    </motion.h2>
+                    <div className="w-24 h-1.5 bg-blue-600 rounded-full mt-6" />
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {projects.map((project, index) => (
-                        <a
+                        <motion.div
                             key={index}
-                            href={project.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group relative block overflow-hidden rounded-3xl bg-zinc-50 border border-zinc-100 hover:border-blue-500/50 transition-all duration-300 shadow-sm hover:shadow-xl"
+                            initial={{ opacity: 0, y: 30 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: index * 0.1 }}
+                            className="group relative bg-zinc-900/40 backdrop-blur-xl border border-white/5 rounded-[2.5rem] overflow-hidden hover:border-blue-500/30 transition-all duration-500"
                         >
-                            <div className="aspect-video bg-zinc-100 relative overflow-hidden">
-                                {/* Fallback for missing image */}
-                                <div className="absolute inset-0 flex items-center justify-center text-zinc-300 font-bold bg-zinc-100 group-hover:bg-zinc-50 transition-colors px-6 text-center">
-                                    {project.title}
-                                </div>
-                                {project.image && <img
+                            {/* Card Image Wrapper */}
+                            <div className="aspect-[16/10] relative overflow-hidden">
+                                <img
                                     src={project.image}
                                     alt={project.title}
-                                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                                    onError={(e) => e.target.style.display = 'none'}
-                                />}
-                                <div className="absolute inset-0 bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                                    <span className="text-white font-bold bg-blue-600 px-6 py-3 rounded-full text-sm shadow-lg transform translate-y-4 group-hover:translate-y-0 transition-transform">Ver Proyecto</span>
+                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-transparent" />
+
+                                {/* Overlay Tech Tags */}
+                                <div className="absolute top-6 left-6 flex gap-2">
+                                    {project.tech.map((t, i) => (
+                                        <span key={i} className="px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 rounded-full text-[8px] font-bold text-white uppercase tracking-wider">
+                                            {t}
+                                        </span>
+                                    ))}
                                 </div>
                             </div>
+
+                            {/* Card Content */}
                             <div className="p-8">
-                                <span className="text-blue-600 text-xs font-bold tracking-widest uppercase">{project.category}</span>
-                                <h3 className="text-2xl font-black mt-3 font-outfit text-zinc-900 group-hover:text-blue-600 transition-colors">{project.title}</h3>
+                                <div className="flex justify-between items-start mb-4">
+                                    <div className="flex items-center gap-3">
+                                        <div className="p-2 bg-blue-500/10 rounded-xl text-blue-500">
+                                            {project.icon}
+                                        </div>
+                                        <span className="text-[10px] font-black text-blue-400 uppercase tracking-widest leading-none">
+                                            {project.category}
+                                        </span>
+                                    </div>
+                                    <a
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="p-2 bg-white/5 rounded-full hover:bg-blue-600 transition-colors text-white"
+                                    >
+                                        <ExternalLink className="w-4 h-4" />
+                                    </a>
+                                </div>
+
+                                <h3 className="text-2xl font-black text-white font-outfit mb-4 group-hover:text-blue-400 transition-colors">
+                                    {project.title}
+                                </h3>
+
+                                <div className="flex items-center gap-2 text-zinc-500 text-xs font-medium">
+                                    <Globe className="w-3.5 h-3.5" />
+                                    <span className="truncate">{project.link.replace('https://', '')}</span>
+                                </div>
                             </div>
-                        </a>
+
+                            {/* Bottom hover bar */}
+                            <div className="absolute bottom-0 left-0 w-full h-1 bg-blue-600 scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                        </motion.div>
                     ))}
                 </div>
+
+                <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    className="mt-20 text-center"
+                >
+                    <p className="text-zinc-500 font-medium italic">
+                        Desarrollando soluciones robustas bajo el método de <span className="text-white">Vibecoding</span>.
+                    </p>
+                </motion.div>
             </div>
         </section>
     );

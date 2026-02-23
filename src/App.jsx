@@ -4,7 +4,6 @@ import Hero from './components/Hero';
 import About from './components/About';
 import Services from './components/Services';
 import TechStack from './components/TechStack';
-import Principles from './components/Principles';
 import Portfolio from './components/Portfolio';
 import Footer from './components/Footer';
 import WhatsAppWidget from './components/WhatsAppWidget';
@@ -17,7 +16,6 @@ function App() {
             <About />
             <Services />
             <TechStack />
-            <Principles />
             <Portfolio />
             <Footer />
             <WhatsAppWidget />
