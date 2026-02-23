@@ -10,7 +10,7 @@ import WhatsAppWidget from './components/WhatsAppWidget';
 
 function App() {
     return (
-        <div className="bg-black text-white min-h-screen font-inter selection:bg-blue-500/30">
+        <div className="bg-white dark:bg-[#030303] text-zinc-900 dark:text-white min-h-screen font-inter selection:bg-blue-500/30 transition-colors duration-300">
             <Navbar />
             <Hero />
             <About />
