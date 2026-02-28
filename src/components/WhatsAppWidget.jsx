@@ -15,9 +15,16 @@ const WhatsAppWidget = () => {
             aria-label="Contact on WhatsApp"
         >
             <div className="relative">
-                <div className="absolute inset-0 bg-green-500 rounded-full animate-ping opacity-75 duration-1000"></div>
-                <div className="relative bg-[#25D366] p-4 rounded-full shadow-lg flex items-center justify-center">
-                    <MessageCircle className="w-8 h-8 text-white fill-white" />
+                <div className="absolute inset-0 bg-blue-500/30 rounded-full animate-pulse blur-xl"></div>
+                <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden border-2 border-white/20 shadow-2xl transition-all duration-500 hover:ring-4 hover:ring-blue-500/40">
+                    <img
+                        src="/alejandro-wa.jpg"
+                        alt="Alejandro"
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute bottom-1 right-3 bg-[#25D366] p-1.5 rounded-full shadow-lg flex items-center justify-center border-2 border-white dark:border-zinc-900">
+                        <MessageCircle className="w-3.5 h-3.5 md:w-4 md:h-4 text-white fill-white" />
+                    </div>
                 </div>
 
                 {/* Tooltip */}
