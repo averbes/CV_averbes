@@ -54,13 +54,18 @@ const Footer = () => {
                     <div className="lg:col-span-2 lg:col-start-7">
                         <h4 className="text-blue-500 font-black mb-8 uppercase tracking-[0.3em] text-[10px] md:text-xs">Navegación</h4>
                         <ul className="space-y-4">
-                            {['Sobre mí', 'Servicios', 'Portafolio', 'Tecnologías'].map((item, i) => (
+                            {[
+                                { name: 'Sobre mí', href: '#about' },
+                                { name: 'Servicios', href: '#services' },
+                                { name: 'Portafolio', href: '#portfolio' },
+                                { name: 'Tecnologías', href: '#techstack' }
+                            ].map((item, i) => (
                                 <li key={i}>
                                     <a
-                                        href={`#${item.toLowerCase().replace(' ', '').replace('í', 'i')}`}
+                                        href={item.href}
                                         className="text-zinc-500 hover:text-white transition-colors flex items-center group font-medium"
                                     >
-                                        {item}
+                                        {item.name}
                                         <ArrowUpRight className="w-3 h-3 ml-2 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all" />
                                     </a>
                                 </li>
@@ -72,9 +77,9 @@ const Footer = () => {
                     <div className="lg:col-span-2">
                         <h4 className="text-blue-500 font-black mb-8 uppercase tracking-[0.3em] text-[10px] md:text-xs">Contacto</h4>
                         <ul className="space-y-4">
-                            <li><a href="#" className="text-zinc-500 hover:text-white transition-colors font-medium">Privacidad</a></li>
-                            <li><a href="#" className="text-zinc-500 hover:text-white transition-colors font-medium">Términos de Uso</a></li>
-                            <li><a href="#" className="text-zinc-500 hover:text-white transition-colors font-medium">Contrátame</a></li>
+                            <li><a href="#about" className="text-zinc-500 hover:text-white transition-colors font-medium">Privacidad</a></li>
+                            <li><a href="#hero" className="text-zinc-500 hover:text-white transition-colors font-medium">Términos de Uso</a></li>
+                            <li><a href="mailto:alejandro.verbel@outlook.com" className="text-zinc-500 hover:text-white transition-colors font-medium">Contrátame</a></li>
                         </ul>
                     </div>
 
@@ -84,13 +89,14 @@ const Footer = () => {
                             <div className="relative z-10">
                                 <p className="text-xs font-black text-blue-500 uppercase tracking-widest mb-2">Disponible</p>
                                 <p className="text-sm font-bold text-white mb-4">¿Tienes un proyecto en mente?</p>
-                                <a href="https://wa.me/573115356374" className="text-xs font-black text-blue-400 flex items-center gap-2 hover:gap-3 transition-all">
+                                <a href="https://wa.me/573115356374" target="_blank" rel="noopener noreferrer" className="text-xs font-black text-blue-400 flex items-center gap-2 hover:gap-3 transition-all">
                                     HABLEMOS <ArrowUpRight className="w-3 h-3" />
                                 </a>
                             </div>
                             <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-blue-600/10 rounded-full blur-xl group-hover:scale-150 transition-transform duration-700" />
                         </div>
                     </div>
+
                 </div>
 
                 {/* Bottom Bar */}
