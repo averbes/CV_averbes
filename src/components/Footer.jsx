@@ -34,7 +34,7 @@ const Footer = () => {
                                 { icon: <Linkedin size={20} />, href: "https://www.linkedin.com/in/alejandro-verbel/", color: "hover:bg-blue-600" },
                                 { icon: <Github size={20} />, href: "https://github.com/averbes/", color: "hover:bg-zinc-800" },
                                 { icon: <Twitter size={20} />, href: "https://twitter.com/alejandroverbel", color: "hover:bg-sky-500" },
-                                { icon: <Mail size={20} />, href: "mailto:averbel@example.com", color: "hover:bg-red-500" }
+                                { icon: <Mail size={20} />, href: "mailto:alejandro.verbel@outlook.com", color: "hover:bg-red-500" }
                             ].map((social, i) => (
                                 <motion.a
                                     key={i}

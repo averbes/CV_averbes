@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FileDown } from 'lucide-react';
 
 const Hero = () => {
     return (
@@ -56,7 +57,15 @@ const Hero = () => {
                             <a href="#portfolio" className="px-10 py-4 bg-blue-600 text-white rounded-2xl font-black hover:bg-blue-700 transition-all hover:scale-105 shadow-xl shadow-blue-500/20 active:scale-95">
                                 Ver Proyectos
                             </a>
-                            <a href="#contact" className="px-10 py-4 border border-zinc-200 dark:border-white/10 text-zinc-900 dark:text-white rounded-2xl font-black hover:bg-zinc-100 dark:hover:bg-white/5 transition-all active:scale-95">
+                            <a
+                                href="/CV_Alejandro_Verbel.pdf"
+                                download
+                                className="px-10 py-4 bg-zinc-900 dark:bg-zinc-100 text-white dark:text-zinc-900 rounded-2xl font-black hover:bg-zinc-800 dark:hover:bg-white transition-all hover:scale-105 shadow-xl shadow-black/10 active:scale-95 flex items-center gap-2"
+                            >
+                                <FileDown className="w-5 h-5" />
+                                Descargar CV
+                            </a>
+                            <a href="#contact" className="px-8 py-4 border border-zinc-200 dark:border-white/10 text-zinc-900 dark:text-white rounded-2xl font-black hover:bg-zinc-100 dark:hover:bg-white/5 transition-all active:scale-95">
                                 Contacto
                             </a>
                         </motion.div>
